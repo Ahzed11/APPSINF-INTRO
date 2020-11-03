@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <title>Signaler un incident</title>
+</head>
+
+<body class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field has-addons">
+                        <div class="control">
+                          <input class="input is-rounded" type="search" name="recherche" placeholder="Rechercher un incident">
+                        </div>
+                        <div class="control">
+                          <button class="button is-link is-rounded">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <span>
+                                Rechercher
+                            </span>
+                        </button>
+                        </div>
+                      </div>
+                </div>
+
+                {{#userName}}
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">{{userName}}</a>
+                        <div class="navbar-dropdown is-right is-boxed">
+                            <a class="navbar-item" href="/auth/logout">
+                                <span class="icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+                                <span>Se déconnecter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/userName}}
+                {{^userName}}
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a class="button is-rounded is-link" href="/auth">Se connecter / S'enregistrer</a>
+                    </div>
+                </div>
+                {{/userName}}
+            </div>
+        </div>
+    </nav>
+
+    <section class="columns is-centered section">
+        <div class="column is-half">
+            <h1 class="title">Signaler un incident</h1>
+            <form action="/report" method="post">
+                <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Description" name="description"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Adresse</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Adresse" name="address">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-house-damage"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary is-rounded is-fullwidth">
+                            <span class="icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </span>
+                            <span>
+                                Signaler
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
