@@ -16,7 +16,9 @@ const userSchema = new mongoose.Schema({
         type:Date,
         default:Date.now,
     },
-})
+});
+
+userSchema.index({description: 'text', address: 'text'});
 
 const Report = mongoose.model('Report', userSchema);
 
