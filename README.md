@@ -11,5 +11,5 @@ Introduction du projet d'approfondissement en sciences informatiques (UCL)
 1) Démarrez votre serveur MongoDB 
 2) Avec votre terminal, naviguez jusqu'au dossier APPSINF-INTRO
 3) Tapez `npm install` pour installer les dépendances
-4) Avec Node : `node app.js` **OU** avec Nodemon : `nodemon app.js localhost 3000`
+4) Avec Node : `node ./bin/www` **OU** avec Nodemon : `nodemon ./bin/www localhost 3000`
 5) Avec votre navigateur allez à l'adresse suivante : `localhost:3000`
